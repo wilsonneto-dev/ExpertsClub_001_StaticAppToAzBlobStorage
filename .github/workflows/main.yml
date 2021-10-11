@@ -27,9 +27,7 @@ jobs:
 
     - name: executing npm install and npm run build
       run: |
-        npm install yarn
-        yarn --production
-        yarn build
+        npm run build
     - name: Azure Login - Conectando com Credenciais no Azure
       uses: Azure/login@v1
       with:
