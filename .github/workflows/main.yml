@@ -1,0 +1,43 @@
+name: Publishing React to Azure Blob Storage
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - final-da-aula
+  
+jobs:
+  build-and-deploy:
+    name: Build React App and Upload to Azure Blob Storage
+    runs-on: ubuntu-latest
+    
+    env:
+      CONTAINER: "$web"
+      ACCOUNT: "storagestaticsiteprod"
+  
+    steps:
+    - name: getting the code
+      uses: actions/checkout@v2
+
+    - name: seting up node 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'    
+
+    - name: executing npm install and npm run build
+      run: |
+        npm install yarn
+        yarn --production
+        yarn build
+    - name: Azure Login - Conectando com Credenciais no Azure
+      uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Az - uploading files
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+           az storage blob upload-batch --account-name ${env.ACCOUNT} --destination '${env.CONTAINER}' --source ./build/
