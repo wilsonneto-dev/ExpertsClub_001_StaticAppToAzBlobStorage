@@ -12,10 +12,6 @@ jobs:
     name: Build React App and Upload to Azure Blob Storage
     runs-on: ubuntu-latest
     
-    env:
-      CONTAINER: "$web"
-      ACCOUNT: "storagestaticsiteprod"
-  
     steps:
     - name: getting the code
       uses: actions/checkout@v2
@@ -40,4 +36,4 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-           az storage blob upload-batch --account-name $ACCOUNT --destination '$CONTAINER' --source ./build/
+           az storage blob upload-batch --account-name storagestaticsiteprod --destination '$web' --source ./build/
