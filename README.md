@@ -4,9 +4,7 @@
 
 Ao final teremos uma aplicação React.js estática publicada no Azure Storage de maneira profissional e atrás de uma CDN, custando centavos mensalmente. Apresentado por [Wilson Neto][1].
 
-> __Atenção__: Este é o projeto <template/completo>, se você está procurando o projeto de <completo/template>, vá para [este repositório](https://github.com/rocketseat-experts-club/<seu projeto aqui>)
-
-## sobre este template
+## Sobre este template
 Este é o template "React Material UI Devias Kit", um template gratuito feito pela agência Devias, utilizado aqui apenas como exenplo de uma aplicação React.js totalmente estática (https://material-ui.com/store/items/devias-kit/).
 
 ## Instalação
