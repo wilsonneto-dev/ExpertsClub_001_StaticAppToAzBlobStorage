@@ -9,8 +9,8 @@ Este é o template "React Material UI Devias Kit", um template gratuito feito pe
 
 ## Instalação
 
-1. Basta baixar usando `git clone https://github.com/wilsonneto-dev/ExpertsClub_001_StaticAppToAzBlobStorage.git`
-3. Basta executar `npm start`
+1. Basta baixar usando <br />`git clone https://github.com/wilsonneto-dev/ExpertsClub_001_StaticAppToAzBlobStorage.git`
+3. Basta executar <br />`npm start`
 
 ## Expert
 
